@@ -1,0 +1,195 @@
+/* Mirror marketing + legal site — single shared stylesheet.
+   Aesthetic: clean, readable, matches the in-app teal accent. Mobile-first
+   with a sane max-width on long-form text so paragraphs don't sprawl. */
+
+:root {
+  --bg: #ffffff;
+  --ink: #0e1018;
+  --muted: #5d6470;
+  --teal: #00bfa6;
+  --teal-deep: #007a72;
+  --hair: #e6e8ec;
+  --maxw: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.55;
+  font-size: 17px;
+}
+
+a { color: var(--teal-deep); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- Top nav (used on every page) ---- */
+.topnav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--hair);
+}
+.brand {
+  font-weight: 800;
+  font-size: 19px;
+  color: var(--ink);
+  letter-spacing: 0.2px;
+}
+.navlink {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.navlink:hover { color: var(--teal-deep); text-decoration: none; }
+
+/* ---- Long-form documents (privacy, terms) ---- */
+.doc {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 36px 24px 80px;
+}
+.doc h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 8px 0 4px;
+  letter-spacing: -0.3px;
+}
+.doc h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 36px 0 8px;
+  letter-spacing: -0.2px;
+}
+.doc h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 22px 0 6px;
+  color: var(--ink);
+}
+.doc p, .doc li { margin: 10px 0; }
+.doc ul { padding-left: 22px; }
+.doc .meta {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+.doc strong { font-weight: 700; }
+
+/* ---- Landing / marketing page ---- */
+.landing {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 64px 24px 80px;
+}
+.hero {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.hero h1 {
+  font-size: 44px;
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  margin: 0 0 18px;
+}
+.hero .lede {
+  font-size: 19px;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 14px;
+}
+.hero .meta {
+  font-size: 13px;
+  color: var(--teal-deep);
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin: 48px 0 64px;
+}
+.feature {
+  border: 1px solid var(--hair);
+  border-radius: 14px;
+  padding: 22px 22px 18px;
+  background: #fafbfc;
+}
+.feature h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+.feature p {
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.contact {
+  text-align: center;
+  margin: 56px auto 0;
+  max-width: 600px;
+}
+.contact .founder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 18px;
+  box-shadow: 0 6px 22px rgba(0, 191, 166, 0.18);
+  border: 2px solid var(--hair);
+}
+.contact h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+.contact p {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* ---- Footer (every page) ---- */
+.docfoot {
+  border-top: 1px solid var(--hair);
+  padding: 20px 24px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+.docfoot a { color: var(--muted); }
+.docfoot a:hover { color: var(--teal-deep); }
+
+/* ---- Small-screen tightening ---- */
+@media (max-width: 480px) {
+  .hero h1 { font-size: 34px; }
+  .hero .lede { font-size: 17px; }
+  .topnav { gap: 14px; padding: 14px 18px; }
+  .doc { padding: 28px 18px 60px; }
+  .doc h1 { font-size: 28px; }
+}
+
+/* ---- Dark mode (system pref) ---- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c0e13;
+    --ink: #ecedf0;
+    --muted: #9aa1ad;
+    --hair: #1d2128;
+    --teal-deep: #4adcc8;
+  }
+  .feature { background: #131722; }
+}
