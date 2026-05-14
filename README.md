@@ -10,7 +10,7 @@ to GitHub Pages on a custom domain.
 - `privacy.html` — Privacy Policy
 - `terms.html` — Terms of Service
 - `assets/style.css` — shared styles (mobile-first, dark-mode aware)
-- `CNAME` — custom domain (currently `mirrorfit.app` — change before pushing if you pick a different domain)
+- `CNAME` — custom domain (currently `mirrorfitness.app` — change before pushing if you pick a different domain)
 
 ## Before first push
 
@@ -18,7 +18,7 @@ to GitHub Pages on a custom domain.
 
 ## One-time setup
 
-1. Decide on the domain. Default in `CNAME` is `mirrorfit.app`. If you pick a different one, edit the `CNAME` file and any references in the HTML/CSS (none today — links are root-relative).
+1. Decide on the domain. Default in `CNAME` is `mirrorfitness.app`. If you pick a different one, edit the `CNAME` file and any references in the HTML/CSS (none today — links are root-relative).
 2. Register the domain. Recommended registrars: Cloudflare, Namecheap, Porkbun. `.app` TLDs are ~$15–20/year and are HTTPS-only by TLD policy, which dovetails with GitHub Pages' free Let's Encrypt cert.
 3. Create a public GitHub repo (e.g. `mirror-website` under your account).
 4. Push these files to it:
@@ -47,15 +47,15 @@ to GitHub Pages on a custom domain.
      - `2606:50c0:8002::153`
      - `2606:50c0:8003::153`
    - One CNAME for `www.` → `<your-username>.github.io`
-8. Wait for DNS to propagate (usually 5–30 minutes). Open `https://mirrorfit.app/` in a browser to verify.
+8. Wait for DNS to propagate (usually 5–30 minutes). Open `https://mirrorfitness.app/` in a browser to verify.
 
 ## URLs to paste into App Store Connect
 
 Once the site is live:
 
-- **Marketing/Support URL**: `https://mirrorfit.app/`
-- **Privacy Policy URL**: `https://mirrorfit.app/privacy.html`
-- **EULA / Terms of Service URL** (optional in App Store Connect for free apps): `https://mirrorfit.app/terms.html`
+- **Marketing/Support URL**: `https://mirrorfitness.app/`
+- **Privacy Policy URL**: `https://mirrorfitness.app/privacy.html`
+- **EULA / Terms of Service URL** (optional in App Store Connect for free apps): `https://mirrorfitness.app/terms.html`
 
 ## Editing notes
 
