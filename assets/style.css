@@ -49,6 +49,23 @@ a:hover { text-decoration: underline; }
 }
 .navlink:hover { color: var(--teal-deep); text-decoration: none; }
 
+/* Persistent "Join Beta" pill in the top nav — same destination as
+   the hero CTA so the call to action follows users as they scroll
+   long-form docs. */
+.navlink-cta {
+  margin-left: auto;
+  color: var(--teal-deep);
+  background: rgba(0, 191, 166, 0.10);
+  border: 1px solid rgba(0, 191, 166, 0.30);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.navlink-cta:hover {
+  background: rgba(0, 191, 166, 0.20);
+  text-decoration: none;
+}
+
 /* ---- Long-form documents (privacy, terms) ---- */
 .doc {
   max-width: var(--maxw);
@@ -111,6 +128,44 @@ a:hover { text-decoration: underline; }
   font-weight: 600;
   letter-spacing: 0.6px;
   text-transform: uppercase;
+}
+
+/* Primary call-to-action under the hero — the whole site exists to
+   funnel readers into TestFlight, so the button gets weight. */
+.hero-cta-row {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: var(--teal);
+  color: white;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 191, 166, 0.30);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0, 191, 166, 0.38);
+  text-decoration: none;
+  color: white;
+}
+.cta-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0, 191, 166, 0.30);
+}
+.cta-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
 }
 
 .features {
