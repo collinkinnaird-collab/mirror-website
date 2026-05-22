@@ -228,6 +228,41 @@ a:hover { text-decoration: underline; }
 .docfoot a { color: var(--muted); }
 .docfoot a:hover { color: var(--teal-deep); }
 
+/* App Store badge — Apple's official "Download on the App Store" mark.
+   Two variants live in /assets (black, white) and the picture element
+   in index.html swaps via prefers-color-scheme. Sized to play nicely
+   with the existing CTA row; don't crop or restyle the badge itself —
+   Apple's brand guidelines forbid it. */
+.app-store-link {
+  display: inline-block;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+.app-store-link:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+  text-decoration: none;
+}
+.app-store-link:active {
+  transform: translateY(0);
+}
+.app-store-badge {
+  height: 56px;
+  width: auto;
+  display: block;
+}
+
+/* Secondary CTA under the hero — demoted TestFlight link for users
+   who want pre-release access to the next version. */
+.cta-sub-secondary {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 8px 0 0;
+}
+.cta-sub-secondary a {
+  color: var(--teal-deep);
+  text-decoration: underline;
+}
+
 /* ---- Small-screen tightening ---- */
 @media (max-width: 480px) {
   .hero h1 { font-size: 34px; }
